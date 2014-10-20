@@ -19,12 +19,6 @@ $(document).ready(function(){
 
 function fizz(myNum)
 	{if(myNum % 3 === 0)
-		{var fizzFlag = true;}
-
-	else
-		{var fizzFlag= false;}
-
-	if(fizzFlag === true)
 		{return 'fizz';}
 
 	else {return myNum;}
@@ -33,12 +27,6 @@ function fizz(myNum)
 
 function buzz(myNum)
 	{if(myNum % 5 === 0)
-		{var buzzFlag = true;}
-
-	else
-		{var buzzFlag= false;}
-
-	if(buzzFlag === true)
 		{return 'buzz';}
 
 	else {return myNum;}
