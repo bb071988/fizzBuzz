@@ -1,9 +1,29 @@
 $(document).ready(function(){
 
-	for(x=1;x<101;x++)
-		{
-			// $('ul').append("<li>" + x +"</li>");
+	var inputLoop = true;
+	var userMessage = "Please enter a whole number to FizzBuzz up to";
 
+	while(inputLoop === true)  // loop takes input until an integer can be identified in string
+	{
+		var userVal = prompt(userMessage);
+
+		var c = checkVal(userVal);
+		console.log(c);
+
+		if(isNaN(c))
+		{inputLoop = true;
+			userMessage = "Sorry - that's not a number: \n Please enter a whole number to FizzBuzz up to";
+			// Changes the message if input is not a whole number.
+		}
+
+		else
+			{inputLoop = false;}
+
+	}
+
+
+	for(x=1; x <= c ;x++)
+		{
 			var f = fizz(x);
 			var b = buzz(x);
 			var fb = fizzBuzz(x, f, b);
@@ -23,7 +43,7 @@ function fizz(myNum)
 
 	else {return myNum;}
 
-	}
+	};
 
 function buzz(myNum)
 	{if(myNum % 5 === 0)
@@ -31,7 +51,7 @@ function buzz(myNum)
 
 	else {return myNum;}
 
-	}
+	};
 
 
 
@@ -48,8 +68,17 @@ function fizzBuzz(myNum, fizz, buzz)
 
 		else
 			{return myNum;}
-	} 
+	} ;
 
+
+function checkVal(userVal)
+	{
+		return parseInt(userVal);
+
+		// extracts integer from decimal numbers or text - returns NaN if no integer in the string.
+		// could add a round function or other input validation here if desired.
+
+	};
 
 
 
